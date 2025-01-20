@@ -83,7 +83,7 @@ Syntax of ArrayList : ArrayList<type> arr = new ArrayList<type>();
 |forEach(Consumer<? super E> action) |	Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception. |
 |get(int index) |	Returns the element at the specified position in this list. |
 |indexOf(Object O) |	The index the first occurrence of a specific element is either returned or -1 in case the element is not in the list. |
-|isEmpty()	Returns true if this list contains no elements. |
+|isEmpty() |	Returns true if this list contains no elements. |
 |lastIndexOf(Object O) |	The index of the last occurrence of a specific element is either returned or -1 in case the element is not in the list. |
 |listIterator() |	Returns a list iterator over the elements in this list (in proper sequence). |
 |listIterator(int index) |	Returns a list iterator over the elements in this list (in proper sequence), starting at the specified position in the list. |
