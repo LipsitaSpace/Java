@@ -116,6 +116,9 @@ Dynamic size, Easy to use, Fast access, Ordered collection, Supports null values
 Slower than arrays, Increased memory usage, Not thread-safe,Performance degradation.
 
 
+
+
+
 > 💡 ArrayList is not synchronized. Use Collections.synchronizedList(new ArrayList<>()) for thread-safe operations.
 
 > 💡 ArrayList can store null elements.
