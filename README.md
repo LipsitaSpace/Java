@@ -124,3 +124,14 @@ Slower than arrays, Increased memory usage, Not thread-safe,Performance degradat
 > 💡 ArrayList can store null elements.
 
 > 💡 ArrayList can store data till the ArrayList size is full, after that the size of ArrayList is doubled if we want to store any more elements.
+
+
+
+
+|Spliterator Methods| Usage |
+|-------------------|---------|
+| tryAdvance(Consumer<? super T> action)| Performs the given action on the next element if available and returns true. Otherwise, it returns false. |
+| forEachRemaining(Consumer<? super T> action) | Performs the given action for each remaining element until all elements are processed. |
+| trySplit() | Attempts to partition the elements, returning a new Spliterator for the first half of the elements, leaving the current Spliterator with the second half. |
+| estimateSize() | Returns an estimate of the number of elements remaining. |
+| characteristics() | Returns a set of characteristics about the Spliterator.|
