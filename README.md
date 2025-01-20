@@ -31,7 +31,7 @@ Constructor: AbstractSequentialList<E> asl = new LinkedList<E>();
 
 <img width="257" alt="image" src="https://github.com/user-attachments/assets/3d275c28-7b83-4634-a0bc-4374cd033dcf" />
 
-AbstractSequentialList methods:
+# AbstractSequentialList methods:
 1. size() -> used to get the size for this instance [arr.size()].
 2. conatinsAll() -> used to check whether two Collections contain the same elements or not [abs.containsAll(abs2)].
 3. lastIndexOf() ->  used to return the index of the last occurrence of the specified element in this list, or -1 if this list does not contain the element 
@@ -101,7 +101,7 @@ Syntax of ArrayList : ArrayList<type> arr = new ArrayList<type>();
 |toArray(Object[] O) |	It is also used to return an array containing all of the elements in this list in the correct order same as the previous method. |
 |trimToSize() |	This method is used to trim the capacity of the instance of the ArrayList to the list’s current size. |
 
-#Complexity
+# Complexity
 | Operation  | Time Complexity  | Space Complexity     |
 |--------------|--------------|--------------|
 |Inserting Element in ArrayList |O(1) |O(N) |
