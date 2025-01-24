@@ -339,6 +339,8 @@ Stack<E> stack = new Stack<E>();
 
 
 >  It is recommended to use ArrayDeque for stack implementation as it is more efficient in a single-threaded environment.
+
 >  Deque has ability to use streams convert to list with keeping LIFO concept applied while Stack does not.
+
 >  Deque<Type> deque = new ArrayDeque<>(); deque.push(E);   List<Type> list2 = deque.stream().collect(Collectors.toList());
 
