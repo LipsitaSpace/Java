@@ -347,3 +347,76 @@ Stack<E> stack = new Stack<E>();
 
 
 # LinkedList
+
+Since a LinkedList acts as a dynamic array and we do not have to specify the size while creating it, the size of the list automatically increases when we dynamically add and remove items. And also, the elements are not stored in a continuous fashion. Therefore, there is no need to increase the size. Internally, the LinkedList is implemented using the doubly linked list data structure. 
+
+The main difference between a normal linked list and a doubly LinkedList is that a doubly linked list contains an extra pointer, typically called the previous pointer, together with the next pointer and data which are there in the singly linked list. 
+
+
+**Constructors**
+
+1. LinkedList(): This constructor is used to create an empty linked list. If we wish to create an empty LinkedList with the name ll, then, it can be created as: LinkedList ll = new LinkedList();  
+
+2. LinkedList(Collection C): This constructor is used to create an ordered list that contains all the elements of a specified collection, as returned by the collection’s iterator. If we wish to create a LinkedList with the name ll, then, it can be created as: LinkedList ll = new LinkedList(C);
+
+# Methods
+
+| **Method**                        | **Description**                                                                                                                                                       |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `add(int index, E element)`       | Inserts the specified element at the specified position in this list.                                                                                              |
+| `add(E e)`                        | Appends the specified element to the end of this list.                                                                                                            |
+| `addAll(int index, Collection<E> c)` | Inserts all elements in the specified collection into this list, starting at the specified position.                                                           |
+| `addAll(Collection<E> c)`         | Appends all elements in the specified collection to the end of this list, in the order returned by the collection’s iterator.                                    |
+| `addFirst(E e)`                   | Inserts the specified element at the beginning of this list.                                                                                                      |
+| `addLast(E e)`                    | Appends the specified element to the end of this list.                                                                                                            |
+| `clear()`                         | Removes all elements from this list.                                                                                                                              |
+| `clone()`                         | Returns a shallow copy of this `LinkedList`.                                                                                                                      |
+| `contains(Object o)`              | Returns `true` if this list contains the specified element.                                                                                                       |
+| `descendingIterator()`            | Returns an iterator over the elements in this deque in reverse sequential order.                                                                                  |
+| `element()`                       | Retrieves but does not remove the head (first element) of this list.                                                                                              |
+| `get(int index)`                  | Returns the element at the specified position in this list.                                                                                                       |
+| `getFirst()`                      | Returns the first element in this list.                                                                                                                           |
+| `getLast()`                       | Returns the last element in this list.                                                                                                                            |
+| `indexOf(Object o)`               | Returns the index of the first occurrence of the specified element in this list, or `-1` if not found.                                                            |
+| `lastIndexOf(Object o)`           | Returns the index of the last occurrence of the specified element in this list, or `-1` if not found.                                                             |
+| `listIterator(int index)`         | Returns a list-iterator of the elements in this list (in proper sequence), starting at the specified position.                                                    |
+| `offer(E e)`                      | Adds the specified element as the tail (last element) of this list.                                                                                               |
+| `offerFirst(E e)`                 | Inserts the specified element at the front of this list.                                                                                                          |
+| `offerLast(E e)`                  | Inserts the specified element at the end of this list.                                                                                                            |
+| `peek()`                          | Retrieves but does not remove the head (first element) of this list.                                                                                              |
+| `peekFirst()`                     | Retrieves but does not remove the first element of this list, or returns `null` if this list is empty.                                                            |
+| `peekLast()`                      | Retrieves but does not remove the last element of this list, or returns `null` if this list is empty.                                                             |
+| `poll()`                          | Retrieves and removes the head (first element) of this list.                                                                                                      |
+| `pollFirst()`                     | Retrieves and removes the first element of this list, or returns `null` if this list is empty.                                                                    |
+| `pollLast()`                      | Retrieves and removes the last element of this list, or returns `null` if this list is empty.                                                                     |
+| `pop()`                           | Pops an element from the stack represented by this list.                                                                                                          |
+| `push(E e)`                       | Pushes an element onto the stack represented by this list.                                                                                                       |
+| `remove()`                        | Retrieves and removes the head (first element) of this list.                                                                                                      |
+| `remove(int index)`               | Removes the element at the specified position in this list.                                                                                                       |
+| `remove(Object o)`                | Removes the first occurrence of the specified element from this list, if present.                                                                                 |
+| `removeFirst()`                   | Removes and returns the first element from this list.                                                                                                             |
+| `removeFirstOccurrence(Object o)` | Removes the first occurrence of the specified element in this list (when traversing from head to tail).                                                           |
+| `removeLast()`                    | Removes and returns the last element from this list.                                                                                                              |
+| `removeLastOccurrence(Object o)`  | Removes the last occurrence of the specified element in this list (when traversing from head to tail).                                                            |
+| `set(int index, E element)`       | Replaces the element at the specified position in this list with the specified element.                                                                            |
+| `size()`                          | Returns the number of elements in this list.                                                                                                                      |
+| `spliterator()`                   | Creates a late-binding and fail-fast Spliterator over the elements in this list.                                                                                  |
+| `toArray()`                       | Returns an array containing all elements in this list in proper sequence (from first to last element).                                                            |
+| `toArray(T[] a)`                  | Returns an array containing all elements in this list in proper sequence (from first to last element); the runtime type of the returned array is that of `a`.    |
+| `toString()`                      | Returns a string containing all elements in this list in proper sequence, enclosed in square brackets, with elements separated by commas.                         |
+
+
+**Advantages**
+
+* Dynamic size: As with Vector, the size of a LinkedList can grow or shrink dynamically, so you don’t have to worry about setting an initial size.
+* Efficient Insertions and Deletions: LinkedList is an efficient data structure for inserting or deleting elements in the middle of the list because you only need to change the links between elements, rather than shifting all elements after the insertion or deletion point.
+* Flexible Iteration: With a linked list, you can efficiently iterate through the list in either direction, since each element has a reference to both its predecessor and successor elements.
+
+
+**Disadvantages**
+
+* Performance: LinkedList has a slower performance than ArrayList when it comes to accessing individual elements. This is because you need to traverse the list to reach the desired element, whereas with ArrayList, you can simply access the desired element using an index.
+* Memory overhead: LinkedList requires more memory than ArrayList because each element requires additional memory for the links to its predecessor and successor elements.
+
+
+
