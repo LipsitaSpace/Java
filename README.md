@@ -143,18 +143,6 @@ Slower than arrays, Increased memory usage, Not thread-safe,Performance degradat
 
 The Vector class implements a growable array of objects.
 
-**Advantages**
-Thread-Safe: All methods are synchronized, making it suitable for multi-threaded environments. However, this can lead to performance overhead in single-threaded scenarios.
-
-Allows Nulls: Can store null elements.
-
-Enumeration Support: Provides backward compatibility with Enumeration, a legacy way of iterating over elements.
-
-**Disadvantages**
-It gives a poor performance in adding, searching, deleting, and updating its elements.
-
-The Iterators returned by the Vector class are fail-fast. In the case of concurrent modification, it fails and throws the ConcurrentModificationException.
-
 <img width="203" alt="image" src="https://github.com/user-attachments/assets/8b87273a-030b-43f6-8a45-a0495c332ae9" />
 
 
@@ -253,5 +241,15 @@ Vector<E> v = new Vector<E>(Collection c);
 4. Iterating over elements :
   *  get(int index): to get the element at a specific index.
 
- 
+ **Advantages**
+Thread-Safe: All methods are synchronized, making it suitable for multi-threaded environments. However, this can lead to performance overhead in single-threaded scenarios.
+
+Allows Nulls: Can store null elements.
+
+Enumeration Support: Provides backward compatibility with Enumeration, a legacy way of iterating over elements.
+
+**Disadvantages**
+It gives a poor performance in adding, searching, deleting, and updating its elements.
+
+The Iterators returned by the Vector class are fail-fast. In the case of concurrent modification, it fails and throws the ConcurrentModificationException.
  
