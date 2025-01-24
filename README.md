@@ -255,3 +255,90 @@ It gives a poor performance in adding, searching, deleting, and updating its ele
 
 The Iterators returned by the Vector class are fail-fast. In the case of concurrent modification, it fails and throws the ConcurrentModificationException.
  
+
+
+# Stack Class
+
+The class is based on the basic principle of LIFO(last-in-first-out). In addition to the basic push and pop operations, the class  extends Vector and provides three more functions of empty, search, and peek.
+
+
+**All Implemented Interfaces:**
+
+1. Serializable: It is a marker interface that classes must implement if they are to be serialized and deserialized.
+2. Cloneable: This is an interface in Java which needs to be implemented by a class to allow its objects to be cloned.
+3. Iterable<E>: This interface represents a collection of objects which is iterable — meaning which can be iterated.
+4. Collection<E>: A Collection represents a group of objects known as its elements. The Collection interface is used to pass around collections of objects where maximum generality is desired.
+5. List<E>: The List interface provides a way to store the ordered collection. It is a child interface of Collection.
+6. RandomAccess: This is a marker interface used by List implementations to indicate that they support fast (generally constant time) random access.
+
+**SYNTAX**
+import java.util.stack
+Stack<E> stack = new Stack<E>();
+
+#  Methods
+
+| **Method**             | **Description**                                                                                                                                      |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `empty()`              | Returns `true` if the stack is empty; otherwise, returns `false`.                                                                                   |
+| `peek()`               | Returns the element on the top of the stack without removing it.                                                                                    |
+| `pop()`                | Removes and returns the top element of the stack. Throws an `EmptyStackException` if the stack is empty.                                            |
+| `push(Object element)` | Pushes an element onto the top of the stack.                                                                                                        |
+| `search(Object element)` | Determines whether an object exists in the stack. If found, returns the position of the element from the top of the stack; otherwise, returns `-1`. |
+
+
+# Methods inherited from class java.util.Vector
+
+| **Method**                     | **Description**     |
+|--------------------------------|----------------------|
+| `add(Object obj)`              | Appends the specified element to the end of this Vector.|
+| `add(int index, Object obj)`   | Inserts the specified element at the specified position in this Vector. |
+| `addAll(Collection c)`         | Appends all elements in the specified Collection to the end of this Vector, in the order returned by the Collection’s Iterator.|
+| `addAll(int index, Collection c)` | Inserts all elements in the specified Collection into this Vector at the specified position. |
+| `addElement(Object o)`         | Adds the specified component to the end of this vector, increasing its size by one. |
+| `capacity()`                   | Returns the current capacity of this vector.|
+| `clear()`                      | Removes all elements from this Vector. |
+| `clone()`                      | Returns a clone of this vector. |
+| `contains(Object o)`           | Returns `true` if this vector contains the specified element. |
+| `containsAll(Collection c)`    | Returns `true` if this Vector contains all elements in the specified Collection.  |
+| `copyInto(Object[] array)`     | Copies the components of this vector into the specified array.  |
+| `elementAt(int index)`         | Returns the component at the specified index. |
+| `elements()`                   | Returns an enumeration of the components of this vector. |
+| `ensureCapacity(int minCapacity)` | Increases the capacity of this vector, if necessary, to ensure it can hold at least the specified number of components. |
+| `equals()`                     | Compares the specified Object with this Vector for equality. |
+| `firstElement()`               | Returns the first component (the item at index 0) of this vector. |
+| `get(int index)`               | Returns the element at the specified position in this Vector.  |
+| `hashCode()`                   | Returns the hash code value for this Vector. |
+| `indexOf(Object o)`            | Returns the index of the first occurrence of the specified element in this vector, or `-1` if not found.|
+| `indexOf(Object o, int index)` | Returns the index of the first occurrence of the specified element in this vector, searching forwards from the specified index. |
+| `insertElementAt(Object o, int index)` | Inserts the specified object as a component in this vector at the specified index.  |
+| `isEmpty()`                    | Tests if this vector has no components. |
+| `iterator()`                   | Returns an iterator over the elements in this list in proper sequence.  |
+| `lastElement()`                | Returns the last component of the vector. |
+| `lastIndexOf(Object o)`        | Returns the index of the last occurrence of the specified element in this vector, or `-1` if not found.  |
+| `lastIndexOf(Object o, int index)` | Returns the index of the last occurrence of the specified element in this vector, searching backward from the specified index. |
+| `listIterator()`               | Returns a list iterator over the elements in this list (in proper sequence). |
+| `listIterator(int index)`      | Returns a list iterator over the elements in this list (in proper sequence), starting at the specified position. |
+| `remove(int index)`            | Removes the element at the specified position in this Vector.   |
+| `remove(Object o)`             | Removes the first occurrence of the specified element in this Vector. If not found, the Vector remains unchanged. |
+| `removeAll(Collection c)`      | Removes from this Vector all elements contained in the specified Collection. |
+| `removeAllElements()`          | Removes all components from this vector and sets its size to zero. |
+| `removeElement(Object o)`      | Removes the first (lowest-indexed) occurrence of the argument from this vector.  |
+| `removeElementAt(int index)`   | Deletes the component at the specified index.  |
+| `removeRange(int fromIndex, int toIndex)` | Removes from this list all elements whose index is between `fromIndex` (inclusive) and `toIndex` (exclusive).  |
+| `retainAll(Collection c)`      | Retains only the elements in this Vector that are contained in the specified Collection. |
+| `set(int index, Object o)`     | Replaces the element at the specified position in this Vector with the specified element. |
+| `setElementAt(Object o, int index)` | Sets the component at the specified index of this vector to the specified object.  |
+| `setSize(int newSize)`         | Sets the size of this vector.  |
+| `size()`                       | Returns the number of components in this vector.  |
+| `subList(int fromIndex, int toIndex)` | Returns a view of the portion of this List between `fromIndex` (inclusive) and `toIndex` (exclusive). |
+| `toArray()`                    | Returns an array containing all elements in this Vector in the correct order.|
+| `toArray(Object[] array)`      | Returns an array containing all elements in this Vector in the correct order. The runtime type of the returned array is that of the specified array. |
+| `toString()`                   | Returns a string representation of this Vector, containing the String representation of each element.  |
+| `trimToSize()`                 | Trims the capacity of this vector to its current size. |
+
+
+
+>  It is recommended to use ArrayDeque for stack implementation as it is more efficient in a single-threaded environment.
+>  Deque has ability to use streams convert to list with keeping LIFO concept applied while Stack does not.
+>  Deque<Type> deque = new ArrayDeque<>(); deque.push(E);   List<Type> list2 = deque.stream().collect(Collectors.toList());
+
