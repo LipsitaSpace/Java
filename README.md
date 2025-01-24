@@ -344,3 +344,6 @@ Stack<E> stack = new Stack<E>();
 
 >  Deque<Type> deque = new ArrayDeque<>(); deque.push(E);   List<Type> list2 = deque.stream().collect(Collectors.toList());
 
+
+
+# LinkedList
