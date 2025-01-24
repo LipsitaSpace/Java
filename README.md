@@ -135,3 +135,123 @@ Slower than arrays, Increased memory usage, Not thread-safe,Performance degradat
 | trySplit() | Attempts to partition the elements, returning a new Spliterator for the first half of the elements, leaving the current Spliterator with the second half. |
 | estimateSize() | Returns an estimate of the number of elements remaining. |
 | characteristics() | Returns a set of characteristics about the Spliterator.|
+
+
+
+
+# Vector Class
+
+The Vector class implements a growable array of objects.
+
+**Advantages**
+Thread-Safe: All methods are synchronized, making it suitable for multi-threaded environments. However, this can lead to performance overhead in single-threaded scenarios.
+
+Allows Nulls: Can store null elements.
+
+Enumeration Support: Provides backward compatibility with Enumeration, a legacy way of iterating over elements.
+
+**Disadvantages**
+It gives a poor performance in adding, searching, deleting, and updating its elements.
+
+The Iterators returned by the Vector class are fail-fast. In the case of concurrent modification, it fails and throws the ConcurrentModificationException.
+
+<img width="203" alt="image" src="https://github.com/user-attachments/assets/8b87273a-030b-43f6-8a45-a0495c332ae9" />
+
+
+
+If the increment is specified, Vector will expand according to it in each allocation cycle. Still, if the increment is not specified, then the vector’s capacity gets doubled in each allocation cycle. Vector defines three protected data members:
+
+int capacityIncrement: Contains the increment value.
+
+int elementCount: Number of elements currently in vector stored in it.
+
+Object elementData[]: Array that holds the vector is stored in it.
+
+
+Vector throws errors :
+1. IllegalArgumentException if the InitialSize of the vector defined is negative.
+2. NullPointerException if the specified collection is null.
+
+# Constructors
+1. Vector(): Creates a default vector of the initial capacity is 10.
+Vector<E> v = new Vector<E>();
+
+2. Vector(int size): Creates a vector whose initial capacity is specified by size.
+Vector<E> v = new Vector<E>(int size);
+
+3. Vector(int size, int incr): Creates a vector whose initial capacity is specified by size and increment is specified by incr. It specifies the number of elements to allocate each time a vector is resized upward.
+Vector<E> v = new Vector<E>(int size, int incr);
+
+4. Vector(Collection c): Creates a vector that contains the elements of collection c.
+Vector<E> v = new Vector<E>(Collection c);
+
+# Methods
+
+| **Method**                                      | **Description** |
+|------------------------------------------------|-----------------|
+| `add(E e)`                                     | Appends the specified element to the end of this Vector. |
+| `add(int index, E element)`                    | Inserts the specified element at the specified position in this Vector. |
+| `addAll(Collection<? extends E> c)`            | Appends all elements in the specified Collection to the end of this Vector, in the order returned by the Collection's Iterator. |
+| `addAll(int index, Collection<? extends E> c)` | Inserts all elements in the specified Collection into this Vector at the specified position. |
+| `addElement(E obj)`                            | Adds the specified component to the end of this Vector, increasing its size by one. |
+| `capacity()`                                   | Returns the current capacity of this Vector. |
+| `clear()`                                      | Removes all elements from this Vector. |
+| `clone()`                                      | Returns a clone of this Vector. |
+| `contains(Object o)`                           | Returns `true` if this Vector contains the specified element. |
+| `containsAll(Collection<?> c)`                | Returns `true` if this Vector contains all elements in the specified Collection. |
+| `copyInto(Object[] anArray)`                  | Copies the components of this Vector into the specified array. |
+| `elementAt(int index)`                        | Returns the component at the specified index. |
+| `elements()`                                   | Returns an enumeration of the components of this Vector. |
+| `ensureCapacity(int minCapacity)`             | Increases the capacity of this Vector, if necessary, to ensure it can hold at least the specified number of components. |
+| `equals(Object o)`                             | Compares the specified Object with this Vector for equality. |
+| `firstElement()`                               | Returns the first component (the item at index 0) of this Vector. |
+| `forEach(Consumer<? super E> action)`         | Performs the given action for each element of the Iterable until all elements are processed or an exception is thrown. |
+| `get(int index)`                               | Returns the element at the specified position in this Vector. |
+| `hashCode()`                                   | Returns the hash code value for this Vector. |
+| `indexOf(Object o)`                           | Returns the index of the first occurrence of the specified element in this Vector, or `-1` if not found. |
+| `indexOf(Object o, int index)`                | Returns the index of the first occurrence of the specified element in this Vector, searching forwards from the specified index. |
+| `insertElementAt(E obj, int index)`           | Inserts the specified object as a component in this Vector at the specified index. |
+| `isEmpty()`                                   | Tests if this Vector has no components. |
+| `iterator()`                                   | Returns an iterator over the elements in this list in proper sequence. |
+| `lastElement()`                                | Returns the last component of this Vector. |
+| `lastIndexOf(Object o)`                       | Returns the index of the last occurrence of the specified element in this Vector, or `-1` if not found. |
+| `lastIndexOf(Object o, int index)`            | Returns the index of the last occurrence of the specified element in this Vector, searching backward from the specified index. |
+| `listIterator()`                              | Returns a list iterator over the elements in this list (in proper sequence). |
+| `listIterator(int index)`                     | Returns a list iterator over the elements in this list (in proper sequence), starting at the specified position. |
+| `remove(int index)`                           | Removes the element at the specified position in this Vector. |
+| `remove(Object o)`                            | Removes the first occurrence of the specified element in this Vector. |
+| `removeAll(Collection<?> c)`                 | Removes from this Vector all elements contained in the specified Collection. |
+| `removeAllElements()`                         | Removes all components from this Vector and sets its size to zero. |
+| `removeElement(Object obj)`                  | Removes the first occurrence of the specified object from this Vector. |
+| `removeElementAt(int index)`                 | Deletes the component at the specified index. |
+| `removeIf(Predicate<? super E> filter)`      | Removes all elements of this collection that satisfy the given predicate. |
+| `removeRange(int fromIndex, int toIndex)`    | Removes all elements whose index is between `fromIndex` (inclusive) and `toIndex` (exclusive). |
+| `replaceAll(UnaryOperator<E> operator)`      | Replaces each element of this list with the result of applying the operator to that element. |
+| `retainAll(Collection<?> c)`                 | Retains only the elements in this Vector contained in the specified Collection. |
+| `set(int index, E element)`                  | Replaces the element at the specified position in this Vector with the specified element. |
+| `setElementAt(E obj, int index)`             | Sets the component at the specified index of this Vector to the specified object. |
+| `setSize(int newSize)`                       | Sets the size of this Vector. |
+| `size()`                                      | Returns the number of components in this Vector. |
+| `sort(Comparator<? super E> c)`              | Sorts this list according to the order induced by the specified Comparator. |
+| `spliterator()`                               | Creates a late-binding and fail-fast Spliterator over the elements in this list. |
+| `subList(int fromIndex, int toIndex)`        | Returns a view of the portion of this List between `fromIndex` (inclusive) and `toIndex` (exclusive). |
+| `toArray()`                                   | Returns an array containing all elements in this Vector in the correct order. |
+| `toArray(T[] a)`                             | Returns an array containing all elements in this Vector in the correct order; the runtime type of the returned array is that of the specified array. |
+| `toString()`                                  | Returns a string representation of this Vector, containing the String representation of each element. |
+| `trimToSize()`                                | Trims the capacity of this Vector to its current size. |
+
+
+# Operations
+1. Adding elements :
+  * add(Object): This method is used to add an element at the end of the Vector.
+  * add(int index, Object): This method is used to add an element at a specific index in the Vector.
+2. Updating Elements :
+  * set(int index, Object): this method takes an index and the updated element to be inserted at that index.
+3. Removing elements :
+  * remove(Object): This method is used to remove an object from the Vector. If there are multiple such objects, then the first occurrence of the object is removed.
+  * remove(int index): Since a Vector is indexed, this method takes an integer value which simply removes the element present at that specific index in the Vector. After removing the element, all the elements are moved to the left to fill the space and the indices of the objects are updated.
+4. Iterating over elements :
+  *  get(int index): to get the element at a specific index.
+
+ 
+ 
